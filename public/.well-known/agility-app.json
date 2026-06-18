@@ -1,0 +1,19 @@
+{
+	"name": "Fetch API JSON Viewer",
+	"documentationLink": "https://agilitycms.com/docs/apps",
+	"description": "View the raw Agility Content Fetch API JSON for the current content item or page, in both Live and Preview modes.",
+	"version": "1.0.0",
+	"__sdkVersion": "2.0.0",
+	"configValues": [],
+	"capabilities": {
+
+		"contentItemSidebar": {
+			"description": "View the Content Fetch API JSON for this item."
+		},
+		"pageSidebar": {
+			"description": "View the Content Fetch API JSON for this page."
+		},
+		"installScreen": false
+
+	}
+}
