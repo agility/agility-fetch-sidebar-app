@@ -2,7 +2,6 @@ import { useAgilityAppSDK } from "@agility/app-sdk"
 import "@agility/plenum-ui/lib/tailwind.css"
 import FetchJSON from "@/components/FetchJSON"
 import Loader from "@/components/Loader"
-import { getInstanceBaseUrl } from "@/lib/getInstanceBaseUrl"
 
 export default function ContentItemSidebar() {
 	const { initializing, instance, locale, contentItem } = useAgilityAppSDK()

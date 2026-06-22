@@ -57,15 +57,12 @@ export default function FetchJSON({ baseUrl, entity, entityID, languageCode }: P
 			const apiKeyObject = await getAPIKey({ apiType, fullKey: true })
 			const apiKey = apiKeyObject.APIKey
 
-			console.log(apiKey, apiKeyObject)
-
 			if (!apiKey) {
 				setError(`No ${modeLabel} API key is available for this instance.`)
 				return
 			}
 
 			const url = `${baseUrl}/${apiPath}/${languageCode}/${entity}/${entityID}?contentLinkDepth=1&expandAllContentLinks=false`
-			console.log('url', url)
 
 			const response = await fetch(url, {
 				headers: {

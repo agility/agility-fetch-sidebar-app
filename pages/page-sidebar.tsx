@@ -3,7 +3,7 @@ import "@agility/plenum-ui/lib/tailwind.css"
 import { useEffect, useState } from "react"
 import FetchJSON from "@/components/FetchJSON"
 import Loader from "@/components/Loader"
-import { getInstanceBaseUrl } from "@/lib/getInstanceBaseUrl"
+import { getApiBaseUrl } from "@/lib/getApiBaseUrl"
 
 export default function PageSidebar() {
 	const { initializing, instance, locale } = useAgilityAppSDK()
@@ -31,7 +31,7 @@ export default function PageSidebar() {
 
 	return (
 		<FetchJSON
-			baseUrl={getInstanceBaseUrl(instance)}
+			baseUrl={getApiBaseUrl(instance.guid)}
 			entity="page"
 			// ItemContainerID is the page id used by the Content Fetch API (matches the manager's pageID).
 			entityID={pageItem.ItemContainerID}
