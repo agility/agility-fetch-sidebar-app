@@ -57,6 +57,8 @@ export default function FetchJSON({ baseUrl, entity, entityID, languageCode }: P
 			const apiKeyObject = await getAPIKey({ apiType, fullKey: true })
 			const apiKey = apiKeyObject.APIKey
 
+			console.log(apiKey, apiKeyObject)
+
 			if (!apiKey) {
 				setError(`No ${modeLabel} API key is available for this instance.`)
 				return
