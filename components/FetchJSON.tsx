@@ -52,8 +52,10 @@ export default function FetchJSON({ baseUrl, entity, entityID, languageCode }: P
 		const modeLabel = mode === "preview" ? "Preview" : "Live"
 
 		try {
+
 			//ask the manager for a ready-to-use API key of the right type
-			const apiKey = await getAPIKey({ apiType })
+			const apiKeyObject = await getAPIKey({ apiType, fullKey: true })
+			const apiKey = apiKeyObject.APIKey
 
 			if (!apiKey) {
 				setError(`No ${modeLabel} API key is available for this instance.`)
@@ -61,6 +63,7 @@ export default function FetchJSON({ baseUrl, entity, entityID, languageCode }: P
 			}
 
 			const url = `${baseUrl}/${apiPath}/${languageCode}/${entity}/${entityID}?contentLinkDepth=1&expandAllContentLinks=false`
+			console.log('url', url)
 
 			const response = await fetch(url, {
 				headers: {

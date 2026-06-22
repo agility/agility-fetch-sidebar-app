@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@agility/app-sdk": "^2.0.0-rc8",
+    "@agility/app-sdk": "2.2.1",
     "@agility/plenum-ui": "^1.3.42",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
