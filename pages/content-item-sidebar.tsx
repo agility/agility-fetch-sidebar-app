@@ -2,6 +2,7 @@ import { useAgilityAppSDK } from "@agility/app-sdk"
 import "@agility/plenum-ui/lib/tailwind.css"
 import FetchJSON from "@/components/FetchJSON"
 import Loader from "@/components/Loader"
+import { getApiBaseUrl } from "@/lib/getApiBaseUrl"
 
 export default function ContentItemSidebar() {
 	const { initializing, instance, locale, contentItem } = useAgilityAppSDK()
@@ -17,7 +18,7 @@ export default function ContentItemSidebar() {
 
 	return (
 		<FetchJSON
-			baseUrl={getInstanceBaseUrl(instance)}
+			baseUrl={getApiBaseUrl(instance.guid)}
 			entity="item"
 			entityID={contentItem.contentID}
 			languageCode={locale}
