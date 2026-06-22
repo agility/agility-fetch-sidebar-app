@@ -47,7 +47,6 @@ export default function FetchJSON({ baseUrl, entity, entityID, languageCode }: P
 		setError(null)
 		setData(null)
 
-		const apiPath = mode === "preview" ? "preview" : "fetch"
 		const apiType = mode === "preview" ? "preview" : "fetch"
 		const modeLabel = mode === "preview" ? "Preview" : "Live"
 
@@ -62,7 +61,7 @@ export default function FetchJSON({ baseUrl, entity, entityID, languageCode }: P
 				return
 			}
 
-			const url = `${baseUrl}/${apiPath}/${languageCode}/${entity}/${entityID}?contentLinkDepth=1&expandAllContentLinks=false`
+			const url = `${baseUrl}/${apiType}/${languageCode}/${entity}/${entityID}?contentLinkDepth=1&expandAllContentLinks=false`
 
 			const response = await fetch(url, {
 				headers: {
